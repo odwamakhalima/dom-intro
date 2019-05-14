@@ -39,14 +39,19 @@ function settingsBill(){
         totalSettings.classList.add("warning");
         totalSettings.classList.remove("danger");
     }
- 
-    if(totalCost >= criticalLevel){
-        totalSettings.classList.add("danger")
-        totalSettings.classList.remove("warning")
-    }
     if(totalCost < warningLevel){
         totalSettings.classList.remove("danger")
         totalSettings.classList.remove("warning")
     }
+ 
+    do{
+        if(totalCost >= criticalLevel){
+            settingsBillAddBtn.removeEventListener("click",settingsBill );
+            totalSettings.classList.add("danger")
+            totalSettings.classList.remove("warning")
+        }
+
+    }while(totalCost > criticalLevel);
+
 }
 settingsBillAddBtn.addEventListener('click', settingsBill);
