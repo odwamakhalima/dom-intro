@@ -39,13 +39,14 @@ function settingsBill(){
         totalSettings.classList.add("warning");
         totalSettings.classList.remove("danger");
     }
-    while(totalCost >= criticalLevel) {
-        totalCost++
-        
+ 
     if(totalCost >= criticalLevel){
         totalSettings.classList.add("danger")
         totalSettings.classList.remove("warning")
     }
+    if(totalCost < warningLevel){
+        totalSettings.classList.remove("danger")
+        totalSettings.classList.remove("warning")
     }
 }
 settingsBillAddBtn.addEventListener('click', settingsBill);
