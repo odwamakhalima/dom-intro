@@ -35,7 +35,7 @@ function settingsBill(){
     var totalCost = callsTotal3 + smsTotal3;
     totalSettings.innerHTML = totalCost.toFixed(2);
 
-    if(totalCost > warningLevel){
+    if(totalCost >= warningLevel){
         totalSettings.classList.add("warning");
         totalSettings.classList.remove("danger");
     }
@@ -50,7 +50,7 @@ function settingsBill(){
             totalSettings.classList.add("danger")
             totalSettings.classList.remove("warning")
         }
-
+        
     }while(totalCost > criticalLevel);
 
 }
