@@ -24,12 +24,20 @@ function myRadio(){
         total = smsTotal + callsTotal
         return total.toFixed(2)
     }
-
+    function warnLevel(){
+        if((radioBillTotal()>=27) && (radioBillTotal()<47)){
+            return 'warning'
+        }
+        else if(radioBillTotal()>=47){
+            return 'danger'
+        }
+    }
 
     return {
         add: myAdd,
         calls: radioCalls,
         sms: radioSms,
         total: radioBillTotal,
+        warn:warnLevel,
     }
 }

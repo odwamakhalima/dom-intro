@@ -5,6 +5,31 @@
     <title></title>
     <link rel="stylesheet" href="css/skeleton.css">
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
+    <script type="text/x-template" class="userTemplate">
+      <table>
+        <tr>
+          <td>calls</td>
+          <td>{{call}}</td>
+        </tr>
+        <tr>
+          <td>sms</td>
+          <td>{{sms}}</td>
+        </tr>
+        <tr>
+          {{#if (col)}}
+          <td>total</td>
+          <td class='warning'>{{total}}</td>
+          {{else if (col2)}}
+          <td>total</td>
+          <td class='danger'>{{total}}</td>
+          {{else}}
+          <td>total</td>
+          <td >{{total}}</td>
+          {{/if}}
+        </tr>
+      </table>
+    </script>
   </head>
   <body>
     <div class="container">
@@ -80,9 +105,6 @@
           <div class="">
             <i>If the total cost exceed R30.00 show the total cost in orange, if over R50 show it in red.</i>
           </div>
-
-          <hr>
-
           <div class="row">
             <div class="six columns">
 
@@ -93,18 +115,9 @@
             <div class="six columns">
               <h5>Totals</h5>
               <table>
-                <tr>
-                  <td>Call total</td>
-                  <td>R<span class="callTotalOne">0.00</span></td>
-                </tr>
-                <tr>
-                  <td>SMS total</td>
-                  <td>R<span class="smsTotalOne">0.00</span></td>
-                </tr>
-                <tr>
-                  <td>Total</td>
-                  <td class="red">R<span class="totalOne">0.00</span></td>
-                </tr>
+                <tbody class="userData">
+        
+                </tbody>
               </table>
             </div>
           </div>
@@ -149,18 +162,9 @@
             <div class="six columns">
                   <h5>Totals</h5>
                   <table>
-                    <tr>
-                      <td>Call total</td>
-                      <td>R<span class="callTotalTwo">0.00</span></td>
-                    </tr>
-                    <tr>
-                      <td>SMS total</td>
-                      <td>R<span class="smsTotalTwo">0.00</span></td>
-                    </tr>
-                    <tr >
-                      <td>Total</td>
-                      <td class="orange" >R<span class="totalTwo">0.00</span></td>
-                    </tr>
+                    <tbody class="userData2">
+        
+                    </tbody>
                   </table>
             </div>
           </div>
@@ -230,7 +234,9 @@
       </div>
     </div>
     <script src="js/calculate-bill.js" charset="utf-8"></script>
+    <script src="js/textFact.js" charset="utf-8"></script>
     <script src="js/text-bill.js" charset="utf-8"></script>
+    <script src="js/radioFact.js" charset="utf-8"></script>    
     <script src="js/radio-bill.js" charset="utf-8"></script>
     <script src="js/settings-bill.js" charset="utf-8"></script>
 

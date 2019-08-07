@@ -27,11 +27,11 @@ function myText() {
         return totalCost.toFixed(2)
     }
 
-    function myColor(){
-        if((textBillTotal()>= 30) && (textBillTotal()<50)){
+    function warnLevel(){
+        if((textBillTotal()>=27) && (textBillTotal()<48)){
             return 'warning'
         }
-        if(textBillTotal()>=50){
+        else if(textBillTotal()>=48){
             return 'danger'
         }
     }
@@ -41,6 +41,7 @@ function myText() {
         calls: textCalls,
         sms: textSms,
         total: textBillTotal,
-        color: myColor,
+        warn: warnLevel,
+       
     }
 }
