@@ -11,7 +11,9 @@ function myText() {
         }
         else if (textBill === "sms") {
             smsTotal += 0.75;
+
         }
+        totalCost = callsTotal + smsTotal
     }
 
     function textCalls(){
@@ -23,15 +25,14 @@ function myText() {
     }
 
     function textBillTotal(){
-        totalCost = callsTotal + smsTotal
         return totalCost.toFixed(2)
     }
 
     function warnLevel(){
-        if((textBillTotal()>=27) && (textBillTotal()<48)){
+        if((totalCost>=30) && (totalCost<50)){
             return 'warning'
         }
-        else if(textBillTotal()>=48){
+        else if(totalCost>=50){
             return 'danger'
         }
     }

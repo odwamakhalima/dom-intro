@@ -25,10 +25,10 @@ function myRadio(){
         return total.toFixed(2)
     }
     function warnLevel(){
-        if((radioBillTotal()>=27) && (radioBillTotal()<47)){
+        if((radioBillTotal()>=30) && (radioBillTotal()<50)){
             return 'warning'
         }
-        else if(radioBillTotal()>=47){
+        else if(radioBillTotal()>=50){
             return 'danger'
         }
     }

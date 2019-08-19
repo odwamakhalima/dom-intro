@@ -14,8 +14,6 @@ textBillTotal()
 function textBillTotal() {
     factoryText.add(billTypeText.value)
 
-    var colorLevel = factoryText.warn()
-
 
     var userDataHTML = userTemplate({
         call: 'R' + factoryText.calls(),
@@ -25,17 +23,19 @@ function textBillTotal() {
 
     myData.innerHTML = userDataHTML
 
-    Handlebars.registerHelper('col', function () {
-        if (colorLevel === 'warning') {
-            return true
-        }
-    });
 
-    Handlebars.registerHelper('col2', function () {
-        if (colorLevel === 'danger') {
-            return true
-        }
-    });
 }
 
 addToBillBtn.addEventListener('click', textBillTotal);
+
+Handlebars.registerHelper('col', function () {
+    if (factoryText.warn() === 'warning') {
+        return true
+    }
+});
+
+Handlebars.registerHelper('col2', function () {
+    if (factoryText.warn() === 'danger') {
+        return true
+    }
+});
