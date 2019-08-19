@@ -13,14 +13,14 @@ var factoryRadio = myRadio()
 
 function radioBill() {
     var checkedRadioBtn = document.querySelector("input[name='billItemType']:checked");
-    factoryRadio.add(checkedRadioBtn.value)
+    factoryRadio.add2(checkedRadioBtn.value)
 
     var colorLevel2 = factoryRadio.warn()
 
     var userDataHTML2 = userTemplate2({
-        call:'R' + factoryRadio.calls(),
-        sms:'R'+ factoryRadio.sms(),
-        total:'R'+ factoryRadio.total()
+        call:'R' + factoryRadio.calls2(),
+        sms:'R'+ factoryRadio.sms2(),
+        total:'R'+ factoryRadio.total2()
     })
     
    myData2.innerHTML = userDataHTML2
@@ -41,4 +41,16 @@ Handlebars.registerHelper('col2', function () {
     console.log(colorLevel2)
 }
 
+
 radioBillAddBtn.addEventListener('click', radioBill);
+
+
+window.onload = function(){
+    var userDataHTML2 = userTemplate2({
+        call:'R' + factoryRadio.calls2(),
+        sms:'R'+ factoryRadio.sms2(),
+        total:'R'+ factoryRadio.total2()
+    })
+    
+   myData2.innerHTML = userDataHTML2
+}

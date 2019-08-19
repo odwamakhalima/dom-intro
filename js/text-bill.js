@@ -16,6 +16,7 @@ function textBillTotal() {
 
     var colorLevel = factoryText.warn()
 
+
     var userDataHTML = userTemplate({
         call: 'R' + factoryText.calls(),
         sms: 'R' + factoryText.sms(),

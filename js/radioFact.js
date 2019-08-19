@@ -34,10 +34,10 @@ function myRadio(){
     }
 
     return {
-        add: myAdd,
-        calls: radioCalls,
-        sms: radioSms,
-        total: radioBillTotal,
+        add2: myAdd,
+        calls2: radioCalls,
+        sms2: radioSms,
+        total2: radioBillTotal,
         warn:warnLevel,
     }
 }
