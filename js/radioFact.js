@@ -38,6 +38,6 @@ function myRadio(){
         calls2: radioCalls,
         sms2: radioSms,
         total2: radioBillTotal,
-        warn:warnLevel,
+        warn2:warnLevel,
     }
 }

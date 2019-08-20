@@ -15,6 +15,22 @@ function radioBill() {
     var checkedRadioBtn = document.querySelector("input[name='billItemType']:checked");
     factoryRadio.add2(checkedRadioBtn.value)
 
+
+    Handlebars.registerHelper('col', function radioBill () {
+        if(factoryRadio.warn2() === 'warning'){
+            return true
+            
+        }
+      
+    });
+    
+    Handlebars.registerHelper('col2', function radioBill () {
+        if(factoryRadio.warn2() === 'danger'){
+            return true
+        }
+    });
+   
+
     var userDataHTML2 = userTemplate2({
         call:'R' + factoryRadio.calls2(),
         sms:'R'+ factoryRadio.sms2(),
@@ -23,23 +39,15 @@ function radioBill() {
     
    myData2.innerHTML = userDataHTML2
  
+   
+
 }
 
 
 radioBillAddBtn.addEventListener('click', radioBill);
 
-Handlebars.registerHelper('col', function () {
-    if(factoryRadio.warn() === 'warning'){
-        return true
-        
-    }
-});
 
-Handlebars.registerHelper('col2', function () {
-    if(factoryRadio.warn() === 'danger'){
-        return true
-    }
-});
+
 
 
 window.onload = function(){

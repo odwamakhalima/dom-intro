@@ -15,6 +15,20 @@ function textBillTotal() {
     factoryText.add(billTypeText.value)
 
 
+    Handlebars.registerHelper('col', function textBillTotal() {
+        if (factoryText.warn() === 'warning') {
+            return true
+        }
+    });
+    
+    Handlebars.registerHelper('col2', function textBillTotal() {
+        if (factoryText.warn() === 'danger') {
+            return true
+        }
+    });
+
+
+
     var userDataHTML = userTemplate({
         call: 'R' + factoryText.calls(),
         sms: 'R' + factoryText.sms(),
@@ -28,14 +42,3 @@ function textBillTotal() {
 
 addToBillBtn.addEventListener('click', textBillTotal);
 
-Handlebars.registerHelper('col', function () {
-    if (factoryText.warn() === 'warning') {
-        return true
-    }
-});
-
-Handlebars.registerHelper('col2', function () {
-    if (factoryText.warn() === 'danger') {
-        return true
-    }
-});
