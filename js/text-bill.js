@@ -16,20 +16,6 @@ function textBillTotal() {
     var colorLevel = factoryText.warn()
 
 
-    // Handlebars.registerHelper('col', function textBillTotal() {
-    //     if (factoryText.warn() === 'warning') {
-    //         return true
-    //     }
-    // });
-    
-    // Handlebars.registerHelper('col2', function textBillTotal() {
-    //     if (factoryText.warn() === 'danger') {
-    //         return true
-    //     }
-    // });
-
-
-
     var userDataHTML = userTemplate({
         call: 'R' + factoryText.calls(),
         sms: 'R' + factoryText.sms(),
