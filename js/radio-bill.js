@@ -10,13 +10,11 @@ var userTemplate2 = Handlebars.compile(templateSource2);
 
 var factoryRadio = myRadio()
 
-
 function radioBill() {
     var checkedRadioBtn = document.querySelector("input[name='billItemType']:checked");
     factoryRadio.add2(checkedRadioBtn.value)
     var colorLevel = factoryRadio.warn2() 
    
-
     var userDataHTML2 = userTemplate2({
         call:'R' + factoryRadio.calls2(),
         sms:'R'+ factoryRadio.sms2(),
@@ -26,16 +24,9 @@ function radioBill() {
     
    myData2.innerHTML = userDataHTML2
  
-   
-
 }
 
-
 radioBillAddBtn.addEventListener('click', radioBill);
-
-
-
-
 
 window.onload = function(){
     var userDataHTML2 = userTemplate2({
@@ -46,4 +37,3 @@ window.onload = function(){
     
    myData2.innerHTML = userDataHTML2
 }
-
